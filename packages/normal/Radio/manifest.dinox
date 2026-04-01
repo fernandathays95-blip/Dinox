@@ -1,1 +1,5 @@
-appname: Radio 
+Name: Radio
+Version: 1.0
+Permissions: microphone, antenna
+EntryPoint: bin/main.dasm
+Description: Aplicativo de rádio para Dinox. Permite ouvir e transmitir áudio via antena.
