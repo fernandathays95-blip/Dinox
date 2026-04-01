@@ -1,0 +1,3 @@
+[INCLUDE /etc/boolean/bool2]
+frequency: 30 MHz --- 3 GHz
+root_subs_frequency_root=y
