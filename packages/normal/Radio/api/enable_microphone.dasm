@@ -1,0 +1,7 @@
+; Liga o microfone
+global enable_microphone
+
+enable_microphone:
+    mov eax, 1
+    mov [MIC_ENABLE], eax
+    ret
