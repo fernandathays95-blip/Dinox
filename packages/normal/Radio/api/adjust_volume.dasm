@@ -1,0 +1,21 @@
+; Ajusta volume do microfone
+global adjust_volume
+
+adjust_volume:
+    ; Recebe valor em eax (0-255)
+    cmp eax, 0
+    jl vol_min
+    cmp eax, 255
+    jg vol_max
+    mov [MIC_VOLUME], eax
+    ret
+
+vol_min:
+    mov eax, 0
+    mov [MIC_VOLUME], eax
+    ret
+
+vol_max:
+    mov eax, 255
+    mov [MIC_VOLUME], eax
+    ret
