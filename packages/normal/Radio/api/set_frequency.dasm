@@ -1,0 +1,21 @@
+; Define a frequência da antena
+global set_frequency
+
+set_frequency:
+    ; Espera frequência em eax
+    cmp eax, 30000000
+    jl set_min
+    cmp eax, 3000000000
+    jg set_max
+    mov [RF_FREQ], eax
+    ret
+
+set_min:
+    mov eax, 30000000
+    mov [RF_FREQ], eax
+    ret
+
+set_max:
+    mov eax, 3000000000
+    mov [RF_FREQ], eax
+    ret
