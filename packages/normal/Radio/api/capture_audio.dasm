@@ -1,0 +1,21 @@
+; Captura áudio do microfone para buffer
+global capture_audio
+
+capture_audio:
+    mov eax, [MIC_STATUS]
+    test eax, 1
+    jz mic_not_ready
+
+    mov al, [MIC_DATA]
+    mov ebx, audio_index
+    mov [audio_buffer + ebx], al
+    inc dword [audio_index]
+    cmp dword [audio_index], 1024
+    jl mic_done
+    mov dword [audio_index], 0
+
+mic_done:
+    ret
+
+mic_not_ready:
+    ret
