@@ -1,0 +1,6 @@
+; Lê força do sinal da antena
+global read_signal_strength
+
+read_signal_strength:
+    mov eax, [RF_STATUS]
+    ret
