@@ -1,0 +1,7 @@
+; Ativa ou desativa mudo
+global mute_microphone
+
+mute_microphone:
+    ; eax = 0 desliga mudo, 1 liga mudo
+    mov [MIC_MUTE], eax
+    ret
