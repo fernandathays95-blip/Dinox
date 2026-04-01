@@ -1,0 +1,11 @@
+; Inicializa a antena para transmissão
+global init_antenna
+
+init_antenna:
+    mov eax, 1
+    mov [RF_ENABLE], eax        ; Liga antena
+    mov eax, 30000000
+    mov [RF_FREQ], eax          ; Frequência inicial 30 MHz
+    mov eax, 16
+    mov [RF_POWER], eax         ; Potência inicial
+    ret
