@@ -1,0 +1,14 @@
+; Envia áudio do buffer via antena
+global transmit_audio
+
+transmit_audio:
+    mov ecx, 0
+transmit_loop:
+    cmp ecx, 1024
+    jge transmit_end
+    mov al, [audio_buffer + ecx]
+    mov [RF_POWER], eax
+    inc ecx
+    jmp transmit_loop
+transmit_end:
+    ret
