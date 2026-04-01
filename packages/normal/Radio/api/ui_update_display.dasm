@@ -1,0 +1,10 @@
+; Atualiza a interface da tela
+global ui_update_display
+
+ui_update_display:
+    ; Exemplo conceitual: atualiza valores da tela
+    mov eax, [freq_current]
+    mov [UI_FREQ_DISPLAY], eax
+    mov eax, [power_current]
+    mov [UI_POWER_DISPLAY], eax
+    ret
