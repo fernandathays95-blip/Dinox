@@ -1,0 +1,45 @@
+;==============================================================
+; Radio.dinox - main.dasm
+; Interface principal do aplicativo Radio
+;==============================================================
+
+global _start
+
+_start:
+    ; Inicializa drivers
+    call init_antenna
+    call init_microphone
+
+    ; Loop principal da interface
+main_loop:
+    ; Mostrar interface de rádio
+    call show_radio_interface
+
+    ; Checar entrada do usuário (teclas ou comandos)
+    call check_user_input
+
+    ; Atualiza transmissão se necessário
+    call capture_audio
+    call transmit_audio
+
+    jmp main_loop
+
+;==============================================================
+; Mostrar interface textual ou gráfica
+;==============================================================
+show_radio_interface:
+    ; Exemplo conceitual: mostra frequência atual e volume
+    mov eax, [freq_current]
+    call print_freq        ; função fictícia que mostra freq
+    mov eax, [power_current]
+    call print_volume      ; função fictícia que mostra volume
+    ret
+
+;==============================================================
+; Checa comandos do usuário
+;==============================================================
+check_user_input:
+    ; Se usuário apertar 'UP' aumenta volume
+    ; Se usuário apertar 'DOWN' diminui volume
+    ; Se usuário apertar 'FREQ+' ou 'FREQ-' altera frequência
+    ret
