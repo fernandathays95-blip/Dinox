@@ -1,0 +1,8 @@
+; Mostra botão na interface
+global ui_show_button
+
+ui_show_button:
+    ; Exemplo conceitual: escreve valor em registrador de UI
+    mov eax, 1
+    mov [UI_BUTTON], eax
+    ret
